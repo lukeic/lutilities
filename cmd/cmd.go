@@ -14,7 +14,8 @@ func Execute(command string, args ...string) (out string, error error) {
 	err := cmd.Run()
 	if err != nil {
 		error = wrappedErr(err)
+	} else {
+		out = cmdOut.String()
 	}
-	out = cmdOut.String()
 	return
 }
